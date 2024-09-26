@@ -92,7 +92,7 @@ const AddCourseCategory = () => {
 
     try {
       const response = await axios.post(
-        "https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/add-all-course-category",
+        "https://backend-neon-nu.vercel.app/add-all-course-category",
         formData
       );
       if (response.status === 200) {

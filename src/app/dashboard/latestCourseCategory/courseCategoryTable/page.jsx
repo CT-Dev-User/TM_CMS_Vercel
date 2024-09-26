@@ -54,7 +54,7 @@ const CourseCategoryTable = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-all-coursecategory"
+        "https://backend-neon-nu.vercel.app/get-all-coursecategory"
       );
       setCourseCategories(response.data);
       setLoading(false);
@@ -78,7 +78,7 @@ const CourseCategoryTable = () => {
 
       if (result.isConfirmed) {
         await axios.delete(
-          `https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/delete-coursecategory-by-id/${id}`
+          `https://backend-neon-nu.vercel.app/delete-coursecategory-by-id/${id}`
         );
         Swal.fire(
           "Deleted!",

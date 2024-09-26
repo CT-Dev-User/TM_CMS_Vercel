@@ -51,7 +51,7 @@ const ConsultingFormCMS = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-consulting-forms"
+        "https://backend-neon-nu.vercel.app/get-consulting-forms"
       );
       setForms(response.data);
       setLoading(false);
@@ -73,7 +73,7 @@ const ConsultingFormCMS = () => {
       if (result.isConfirmed) {
         try {
           await axios.delete(
-            `https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/delete-consulting-form/${id}`
+            `https://backend-neon-nu.vercel.app/delete-consulting-form/${id}`
           );
           Swal.fire(
             "Deleted",

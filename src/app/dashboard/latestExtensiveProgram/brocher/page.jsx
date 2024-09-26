@@ -57,7 +57,7 @@ const BroucherCMS = () => {
         setLoading(true);
         try {
             const response = await axios.get(
-                "https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-all-coursecategory"
+                "https://backend-neon-nu.vercel.app/get-all-coursecategory"
             );
             setCourseCategories(response.data);
         } catch (err) {
@@ -71,7 +71,7 @@ const BroucherCMS = () => {
         setLoading(true);
         try {
             const response = await axios.get(
-                "https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-extensive-program"
+                "https://backend-neon-nu.vercel.app/get-extensive-program"
             );
             setPrograms(response.data);
         } catch (err) {
@@ -84,7 +84,7 @@ const BroucherCMS = () => {
     const fetchBrouchers = async () => {
         setLoading(true);
         try {
-            const response = await axios.get("https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-brouchers");
+            const response = await axios.get("https://backend-neon-nu.vercel.app/get-brouchers");
             setBrouchers(response.data);
             setfilteredbrouchers(response.data);
         } catch (error) {
@@ -112,13 +112,13 @@ const BroucherCMS = () => {
         try {
             if (editingBroucher) {
                 await axios.put(
-                    `https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/update-broucher-by-id/${editingBroucher}`,
+                    `https://backend-neon-nu.vercel.app/update-broucher-by-id/${editingBroucher}`,
                     formData
                 );
                 Swal.fire("Success", "Brochure updated successfully", "success");
                 setEditingBroucher(null);
             } else {
-                await axios.post("https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/add-broucher", formData);
+                await axios.post("https://backend-neon-nu.vercel.app/add-broucher", formData);
                 Swal.fire("Success", "Brochure created successfully", "success");
             }
             fetchBrouchers();
@@ -139,7 +139,7 @@ const BroucherCMS = () => {
     // Handle deleting a brochure
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/delete-broucher/${id}`);
+            await axios.delete(`https://backend-neon-nu.vercel.app/delete-broucher/${id}`);
             fetchBrouchers();
             Swal.fire("Deleted!", "Brochure has been deleted.", "success");
         } catch (error) {

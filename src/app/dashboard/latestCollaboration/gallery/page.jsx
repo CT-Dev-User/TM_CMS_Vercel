@@ -42,7 +42,7 @@ const GalleryManagement = () => {
   const fetchGalleryData = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-galleries");
+      const response = await axios.get("https://backend-neon-nu.vercel.app/get-galleries");
       setGalleryData(response.data);
       setFilteredPrograms(response.data);
       setLoading(false);
@@ -69,7 +69,7 @@ const GalleryManagement = () => {
       if (result.isConfirmed) {
         try {
           await axios.delete(
-            `https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/delete-gallery-by-id/${id}`
+            `https://backend-neon-nu.vercel.app/delete-gallery-by-id/${id}`
           );
           fetchGalleryData();
           Swal.fire("Deleted!", "Gallery item has been deleted.", "success");
@@ -133,7 +133,7 @@ const GalleryManagement = () => {
     try {
       if (editData) {
         await axios.put(
-          `https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/edit-gallery-by-id/${editData._id}`,
+          `https://backend-neon-nu.vercel.app/edit-gallery-by-id/${editData._id}`,
           data
         );
         Swal.fire({
@@ -142,7 +142,7 @@ const GalleryManagement = () => {
           text: "Gallery item has been updated.",
         });
       } else {
-        await axios.post("https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/add-gallery", data);
+        await axios.post("https://backend-neon-nu.vercel.app/add-gallery", data);
         Swal.fire({
           icon: "success",
           title: "Added!",

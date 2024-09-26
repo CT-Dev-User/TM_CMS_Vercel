@@ -60,7 +60,7 @@ const InstructorManagementTable = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-all-instructors"
+        "https://backend-neon-nu.vercel.app/get-all-instructors"
       );
       setCreators(response.data);
       setfilteredcreators(response.data);
@@ -82,7 +82,7 @@ const InstructorManagementTable = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-all-coursecategory"
+        "https://backend-neon-nu.vercel.app/get-all-coursecategory"
       );
       setCourseCategories(response.data);
       setLoading(false);
@@ -105,7 +105,7 @@ const InstructorManagementTable = () => {
       if (result.isConfirmed) {
         try {
           await axios.delete(
-            `https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/delete-instructor-data/${id}`
+            `https://backend-neon-nu.vercel.app/delete-instructor-data/${id}`
           );
           fetchCreators();
           Swal.fire(
@@ -194,7 +194,7 @@ const InstructorManagementTable = () => {
     try {
       if (editMode) {
         await axios.put(
-          `https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/edit-instructor/${editFormData.id}`,
+          `https://backend-neon-nu.vercel.app/edit-instructor/${editFormData.id}`,
           formDataToSend,
           {
             headers: { "Content-Type": "multipart/form-data" },
@@ -203,7 +203,7 @@ const InstructorManagementTable = () => {
         Swal.fire("Success", "Creator data updated successfully", "success");
       } else {
         await axios.post(
-          "https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/add-instructor-data",
+          "https://backend-neon-nu.vercel.app/add-instructor-data",
           formDataToSend,
           {
             headers: { "Content-Type": "multipart/form-data" },

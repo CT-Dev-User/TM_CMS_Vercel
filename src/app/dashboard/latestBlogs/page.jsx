@@ -140,7 +140,7 @@ const BlogManagementTable = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-all-coursecategory"
+        "https://backend-neon-nu.vercel.app/get-all-coursecategory"
       );
       setCourseCategories(response.data);
       setLoading(false);
@@ -153,7 +153,7 @@ const BlogManagementTable = () => {
   const fetchBlogs = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-blogs");
+      const response = await axios.get("https://backend-neon-nu.vercel.app/get-blogs");
       setBlogs(response.data);
       setFilteredPrograms(response.data);
       setLoading(false);
@@ -176,7 +176,7 @@ const BlogManagementTable = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          await axios.delete(`https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/delete-blog-by-id/${id}`);
+          await axios.delete(`https://backend-neon-nu.vercel.app/delete-blog-by-id/${id}`);
           fetchBlogs();
           Swal.fire("Success", "Blog deleted successfully", "success");
         } catch (err) {
@@ -241,7 +241,7 @@ const BlogManagementTable = () => {
     try {
       if (editMode) {
         await axios.put(
-          `https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/edit-blog/${editFormData.id}`,
+          `https://backend-neon-nu.vercel.app/edit-blog/${editFormData.id}`,
           formDataToSend,
           {
             headers: { "Content-Type": "multipart/form-data" },
@@ -249,7 +249,7 @@ const BlogManagementTable = () => {
         );
         Swal.fire("Success", "Blog updated successfully", "success");
       } else {
-        await axios.post("https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/add-blog", formDataToSend, {
+        await axios.post("https://backend-neon-nu.vercel.app/add-blog", formDataToSend, {
           headers: { "Content-Type": "multipart/form-data" },
         });
         Swal.fire("Success", "Blog added successfully", "success");

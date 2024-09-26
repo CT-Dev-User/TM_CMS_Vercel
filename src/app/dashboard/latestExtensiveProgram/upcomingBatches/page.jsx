@@ -67,7 +67,7 @@ const UpcomingBatchesCMS = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-extensive-program"
+        "https://backend-neon-nu.vercel.app/get-extensive-program"
       );
       setPrograms(response.data);
     } catch (err) {
@@ -81,7 +81,7 @@ const UpcomingBatchesCMS = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-upcoming-batches"
+        "https://backend-neon-nu.vercel.app/get-upcoming-batches"
       );
       setBatches(response.data);
       setfilterbatches(response.data);
@@ -95,7 +95,7 @@ const UpcomingBatchesCMS = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-all-coursecategory"
+        "https://backend-neon-nu.vercel.app/get-all-coursecategory"
       );
       setCourseCategories(response.data);
       setLoading(false);
@@ -146,7 +146,7 @@ const UpcomingBatchesCMS = () => {
     try {
       if (editMode) {
         await axios.put(
-          `https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/update-upcoming-batches/${editId}`,
+          `https://backend-neon-nu.vercel.app/update-upcoming-batches/${editId}`,
           formData
         );
         setBatches(
@@ -154,7 +154,7 @@ const UpcomingBatchesCMS = () => {
         );
       } else {
         const response = await axios.post(
-          "https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/add-upcoming-batches",
+          "https://backend-neon-nu.vercel.app/add-upcoming-batches",
           formData
         );
         setBatches([...batches, response.data.upcomingBatch]);
@@ -179,7 +179,7 @@ const UpcomingBatchesCMS = () => {
     if (result.isConfirmed) {
       try {
         await axios.delete(
-          `https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/delete-upcoming-batches/${id}`
+          `https://backend-neon-nu.vercel.app/delete-upcoming-batches/${id}`
         );
         Swal.fire("Deleted!", "Your data has been deleted.", "success");
         fetchBatches(); // Refresh data after deletion

@@ -30,7 +30,7 @@ const ToolsCoveredTable = () => {
       const fetchToolsCovered = async () => {
         try {
           const response = await axios.get(
-            `https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-by-category-tools-covered/${category}`
+            `https://backend-neon-nu.vercel.app/get-by-category-tools-covered/${category}`
           );
           setToolsCovered(response.data);
         } catch (error) {
@@ -66,7 +66,7 @@ const ToolsCoveredTable = () => {
       }).then(async (result) => {
         if (result.isConfirmed) {
           await axios.delete(
-            `https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/delete-tools-covered/${id}`
+            `https://backend-neon-nu.vercel.app/delete-tools-covered/${id}`
           );
           fetchToolsCovered();
           Swal.fire("Deleted!", "The tool has been deleted.", "success");
@@ -89,11 +89,11 @@ const ToolsCoveredTable = () => {
 
       if (selectedTool) {
         await axios.put(
-          `https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/update-tools-covered/${selectedTool._id}`,
+          `https://backend-neon-nu.vercel.app/update-tools-covered/${selectedTool._id}`,
           data
         );
       } else {
-        await axios.post("https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/add-tools-covered", data);
+        await axios.post("https://backend-neon-nu.vercel.app/add-tools-covered", data);
       }
       fetchToolsCovered();
       setShowModal(false);

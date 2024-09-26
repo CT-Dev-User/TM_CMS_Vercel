@@ -32,7 +32,7 @@ const HireFromForm = ({ showModal, setShowModal, editData, fetchHireFromData }) 
     // Fetch course categories from the backend
     const fetchCourseCategories = async () => {
         try {
-            const response = await axios.get('https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-all-coursecategory');
+            const response = await axios.get('https://backend-neon-nu.vercel.app/get-all-coursecategory');
             setCourseCategories(response.data);
         } catch (err) {
             console.log(err);
@@ -71,7 +71,7 @@ const HireFromForm = ({ showModal, setShowModal, editData, fetchHireFromData }) 
         try {
             if (editData) {
                 // Update existing record
-                await axios.put(`https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/update-hire-from/${editData._id}`, formData, {
+                await axios.put(`https://backend-neon-nu.vercel.app/update-hire-from/${editData._id}`, formData, {
                     headers: {
                         "Content-Type": "application/json",
                     },
@@ -79,7 +79,7 @@ const HireFromForm = ({ showModal, setShowModal, editData, fetchHireFromData }) 
                 Swal.fire("Updated!", "Your data has been updated.", "success");
             } else {
                 // Create new record
-                await axios.post("https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/add-hire-from-data", formData, {
+                await axios.post("https://backend-neon-nu.vercel.app/add-hire-from-data", formData, {
                     headers: {
                         "Content-Type": "application/json",
                     },

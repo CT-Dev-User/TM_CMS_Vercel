@@ -38,7 +38,7 @@ const EditCourseCategory = ({ params }) => {
             const fetchCourseCategory = async () => {
                 setLoading(true)
                 try {
-                    const response = await axios.get(`https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-coursecategory-by-id/${id}`);
+                    const response = await axios.get(`https://backend-neon-nu.vercel.app/get-coursecategory-by-id/${id}`);
                     const data = response.data;
                     setCourseCategory(data.courseCategory);
                     setHomeCardIcon(data.homeCard.icon);
@@ -73,7 +73,7 @@ const EditCourseCategory = ({ params }) => {
         }
 
         try {
-            const response = await axios.put(`https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/edit-course-category/${id}`, formData);
+            const response = await axios.put(`https://backend-neon-nu.vercel.app/edit-course-category/${id}`, formData);
             if (response.status === 200) {
                 Swal.fire({
                     title: 'Success!',

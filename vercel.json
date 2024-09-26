@@ -1,0 +1,17 @@
+{
+    "builds": [
+      {
+        "src": "next.config.js",
+        "use": "@vercel/next"
+      }
+    ],
+    "buildCommand": "npm run build",
+    "rewrites": [
+      {
+        "source": "/api/:path*",
+        "destination": "https://backend-neon-nu.vercel.app/:path*"
+      }
+    ],
+    "cleanUrls": true
+  }
+  

@@ -42,7 +42,7 @@ const QueryDataTable = () => {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-query-data");
+      const response = await axios.get("https://backend-neon-nu.vercel.app/get-query-data");
       setData(response.data);
       setLoading(false);
     } catch (error) {
@@ -63,7 +63,7 @@ const QueryDataTable = () => {
 
     if (confirmDelete.isConfirmed) {
       try {
-        await axios.delete(`https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/delete-query-data/${id}`);
+        await axios.delete(`https://backend-neon-nu.vercel.app/delete-query-data/${id}`);
         Swal.fire("Deleted!", "Your data has been deleted.", "success");
         fetchData(); // Refresh the table data after deletion
       } catch (error) {

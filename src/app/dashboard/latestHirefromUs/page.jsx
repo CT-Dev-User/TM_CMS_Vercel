@@ -52,7 +52,7 @@ const HireFromTable = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-all-coursecategory"
+        "https://backend-neon-nu.vercel.app/get-all-coursecategory"
       );
       setCourseCategories(response.data);
       setLoading(false);
@@ -64,7 +64,7 @@ const HireFromTable = () => {
   const fetchHireFromData = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-hire-from");
+      const response = await axios.get("https://backend-neon-nu.vercel.app/get-hire-from");
       setHireFromData(response.data);
       setFilteredPrograms(response.data);
       setLoading(false);
@@ -90,7 +90,7 @@ const HireFromTable = () => {
 
     if (result.isConfirmed) {
       try {
-        await axios.delete(`https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/delete-hire-from/${id}`);
+        await axios.delete(`https://backend-neon-nu.vercel.app/delete-hire-from/${id}`);
         Swal.fire("Deleted!", "Your data has been deleted.", "success");
         fetchHireFromData(); // Refresh data after deletion
       } catch (error) {
