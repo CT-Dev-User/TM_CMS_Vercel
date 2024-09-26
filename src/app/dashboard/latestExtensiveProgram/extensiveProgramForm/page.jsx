@@ -71,7 +71,7 @@ const AddExtensiveProgram = () => {
     const fetchCourseCategories = async () => {
         setLoading(true)
         try {
-            const response = await axios.get('https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/get-all-coursecategory');
+            const response = await axios.get('https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-all-coursecategory');
             setCourseCategories(response.data);
             setLoading(false)
         } catch (err) {
@@ -101,7 +101,7 @@ const AddExtensiveProgram = () => {
         }
 
         try {
-            await axios.post('https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/add-extensive-program', formData);
+            await axios.post('https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/add-extensive-program', formData);
             Swal.fire('Success', 'Program data added successfully', 'success');
             router.push('/dashboard/latestExtensiveProgram/programTable'); // Redirect after successful submission
         } catch (error) {

@@ -50,7 +50,7 @@ const ContactUsCMS = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/get-new-contact-us-forms-data"
+        "https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-new-contact-us-forms-data"
       );
       setContactUsForms(response.data);
       setLoading(false);
@@ -72,7 +72,7 @@ const ContactUsCMS = () => {
       if (result.isConfirmed) {
         try {
           await axios.delete(
-            `https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/delete-new-contact-us-form/${id}`
+            `https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/delete-new-contact-us-form/${id}`
           );
           Swal.fire("Deleted!", "Client entry has been deleted.", "success");
           fetchContactUsForms();

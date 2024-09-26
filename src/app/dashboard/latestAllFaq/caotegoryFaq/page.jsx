@@ -52,7 +52,7 @@ const FaqByCategoryTable = () => {
   const fetchCourseCategories = async () => {
     try {
       const response = await axios.get(
-        "https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/get-all-coursecategory"
+        "https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-all-coursecategory"
       );
       setCourseCategories(response.data);
       setLoading(false);
@@ -65,7 +65,7 @@ const FaqByCategoryTable = () => {
   const fetchFaqs = async () => {
     try {
       const response = await axios.get(
-        "https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/get-all-faq-by-category-data"
+        "https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-all-faq-by-category-data"
       );
       setFaqs(response.data);
       setFilteredPrograms(response.data);
@@ -84,7 +84,7 @@ const FaqByCategoryTable = () => {
     try {
       if (editMode) {
         await axios.put(
-          `https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/edit-faq-by-category-data/${editId}`,
+          `https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/edit-faq-by-category-data/${editId}`,
           data
         );
         Swal.fire("Success", "FAQ data updated successfully", "success");
@@ -92,7 +92,7 @@ const FaqByCategoryTable = () => {
         setEditId(null);
       } else {
         await axios.post(
-          "https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/add-faq-by-category-data",
+          "https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/add-faq-by-category-data",
           data
         );
         Swal.fire("Success", "FAQ data added successfully", "success");
@@ -135,7 +135,7 @@ const FaqByCategoryTable = () => {
       if (result.isConfirmed) {
         try {
           await axios.delete(
-            `https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/delete-faq-by-category-data/${id}`
+            `https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/delete-faq-by-category-data/${id}`
           );
           Swal.fire({
             icon: "success",

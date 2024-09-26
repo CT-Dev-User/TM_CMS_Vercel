@@ -63,7 +63,7 @@ const StudentReviewCMS = () => {
   const fetchCourseCategories = async () => {
     try {
       const response = await axios.get(
-        "https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/get-all-coursecategory"
+        "https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-all-coursecategory"
       );
       setCourseCategories(response.data);
     } catch (err) {
@@ -74,7 +74,7 @@ const StudentReviewCMS = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/get-all-student-review-data"
+        "https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-all-student-review-data"
       );
       setReviews(response.data);
       setFilteredReviews(response.data)
@@ -157,13 +157,13 @@ const StudentReviewCMS = () => {
       });
       if (isEdit) {
         await axios.put(
-          `https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/edit-student-review-data/${editId}`,
+          `https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/edit-student-review-data/${editId}`,
           formDataToSend
         );
         Swal.fire("Success", "Add St Review successfully", "success");
       } else {
         await axios.post(
-          "https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/add-student-review-data",
+          "https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/add-student-review-data",
           formDataToSend
         );
         Swal.fire("Success", "Edit St Review successfully", "success");
@@ -188,7 +188,7 @@ const StudentReviewCMS = () => {
 
       if (result.isConfirmed) {
         await axios.delete(
-          `https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/delete-student-review-data/${id}`
+          `https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/delete-student-review-data/${id}`
         );
         Swal.fire(
           "Deleted!",

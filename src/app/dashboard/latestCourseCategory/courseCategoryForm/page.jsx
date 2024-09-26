@@ -92,7 +92,7 @@ const AddCourseCategory = () => {
 
     try {
       const response = await axios.post(
-        "https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/add-all-course-category",
+        "https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/add-all-course-category",
         formData
       );
       if (response.status === 200) {

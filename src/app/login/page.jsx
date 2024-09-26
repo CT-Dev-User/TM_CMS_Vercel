@@ -19,7 +19,7 @@ const SignIn = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post("https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/login", {
+      const response = await axios.post("https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/login", {
         email,
         password,
       });

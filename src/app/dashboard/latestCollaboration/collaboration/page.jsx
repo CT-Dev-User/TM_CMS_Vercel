@@ -47,7 +47,7 @@ const CollaborationTable = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/get-collaborations"
+        "https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-collaborations"
       );
       setCollaborations(response.data);
       setFilteredPrograms(response.data);
@@ -70,7 +70,7 @@ const CollaborationTable = () => {
     try {
       if (editMode) {
         await axios.put(
-          `https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/edit-collaboration-by-id/${editId}`,
+          `https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/edit-collaboration-by-id/${editId}`,
           formData
         );
         Swal.fire(
@@ -81,7 +81,7 @@ const CollaborationTable = () => {
         setEditMode(false);
         setEditId(null);
       } else {
-        await axios.post("https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/add-collaboration", formData);
+        await axios.post("https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/add-collaboration", formData);
         Swal.fire(
           "Success",
           "Collaboration data added successfully",
@@ -130,7 +130,7 @@ const CollaborationTable = () => {
       if (result.isConfirmed) {
         try {
           await axios.delete(
-            `https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/delete-collaboration-by-id/${id}`
+            `https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/delete-collaboration-by-id/${id}`
           );
           Swal.fire({
             icon: "success",

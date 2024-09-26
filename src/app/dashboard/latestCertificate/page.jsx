@@ -57,7 +57,7 @@ const CertificateCMS = () => {
     setLoading(true); // Start loading spinner
     try {
       const response = await axios.get(
-        "https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/get-all-coursecategory"
+        "https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-all-coursecategory"
       );
       setCourseCategories(response.data);
       setLoading(false); // Start loading spinner
@@ -69,7 +69,7 @@ const CertificateCMS = () => {
   const fetchCertificates = async () => {
     setLoading(true); // Start loading spinner
     try {
-      const response = await axios.get("https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/get-certificate");
+      const response = await axios.get("https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-certificate");
       setCertificates(response.data);
       setfiltrCertificates(response.data);
       setLoading(false); // Start loading spinner
@@ -148,13 +148,13 @@ const CertificateCMS = () => {
     try {
       if (isEdit) {
         await axios.put(
-          `https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/edit-CertificateData-by-id/${editId}`,
+          `https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/edit-CertificateData-by-id/${editId}`,
           formDataToSend
         );
         Swal.fire("Success", "Edit Data Successfully", "success");
       } else {
         await axios.post(
-          "https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/add-certificate",
+          "https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/add-certificate",
           formDataToSend
         );
         Swal.fire("Success", "Add Data successfully", "success");
@@ -181,7 +181,7 @@ const CertificateCMS = () => {
       if (result.isConfirmed) {
         try {
           await axios.delete(
-            `https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/delete-CertificateData-by-id/${id}`
+            `https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/delete-CertificateData-by-id/${id}`
           );
           Swal.fire("Success", "Certificate deleted successfully.", "success");
           fetchCertificates();

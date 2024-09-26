@@ -30,7 +30,7 @@ const ToolsCoveredTable = () => {
       const fetchToolsCovered = async () => {
         try {
           const response = await axios.get(
-            `https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/get-by-category-tools-covered/${category}`
+            `https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-by-category-tools-covered/${category}`
           );
           setToolsCovered(response.data);
         } catch (error) {
@@ -66,7 +66,7 @@ const ToolsCoveredTable = () => {
       }).then(async (result) => {
         if (result.isConfirmed) {
           await axios.delete(
-            `https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/delete-tools-covered/${id}`
+            `https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/delete-tools-covered/${id}`
           );
           fetchToolsCovered();
           Swal.fire("Deleted!", "The tool has been deleted.", "success");
@@ -89,11 +89,11 @@ const ToolsCoveredTable = () => {
 
       if (selectedTool) {
         await axios.put(
-          `https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/update-tools-covered/${selectedTool._id}`,
+          `https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/update-tools-covered/${selectedTool._id}`,
           data
         );
       } else {
-        await axios.post("https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/add-tools-covered", data);
+        await axios.post("https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/add-tools-covered", data);
       }
       fetchToolsCovered();
       setShowModal(false);

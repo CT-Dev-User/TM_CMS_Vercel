@@ -64,7 +64,7 @@ const CrashCourseCMS = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/get-all-coursecategory"
+        "https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-all-coursecategory"
       );
       setCourseCategories(response.data);
       setLoading(false);
@@ -77,7 +77,7 @@ const CrashCourseCMS = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/get-crash-courses"
+        "https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-crash-courses"
       );
       setCrashCourses(response.data);
       setLoading(false);
@@ -134,7 +134,7 @@ const CrashCourseCMS = () => {
     try {
       if (isEdit) {
         await axios.put(
-          `https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/edit-crash-course/${editId}`,
+          `https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/edit-crash-course/${editId}`,
           formDataToSend,
           {
             headers: { "Content-Type": "application/json" },
@@ -143,7 +143,7 @@ const CrashCourseCMS = () => {
         Swal.fire("Success", "Crash course updated successfully.", "success");
       } else {
         await axios.post(
-          "https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/add-crash-course",
+          "https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/add-crash-course",
           formDataToSend,
           {
             headers: { "Content-Type": "application/json" },
@@ -173,7 +173,7 @@ const CrashCourseCMS = () => {
       if (result.isConfirmed) {
         try {
           await axios.delete(
-            `https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/delete-crash-course-by-id/${id}`
+            `https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/delete-crash-course-by-id/${id}`
           );
           Swal.fire("Deleted!", "Crash course has been deleted.", "success");
           fetchCrashCourses();

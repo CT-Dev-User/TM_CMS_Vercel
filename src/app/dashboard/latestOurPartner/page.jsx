@@ -52,7 +52,7 @@ const OurPartenerTable = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/get-all-our-partner-data"
+        "https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-all-our-partner-data"
       );
       setPartners(response.data);
       setLoading(false);
@@ -69,14 +69,14 @@ const OurPartenerTable = () => {
       data.append("companyLogo", companyLogo);
       if (editMode) {
         await axios.put(
-          `https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/edit-our-partner-data/${editId}`,
+          `https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/edit-our-partner-data/${editId}`,
           data
         );
         Swal.fire("Success", "Partner data updated successfully", "success");
         setEditMode(false);
         setEditId(null);
       } else {
-        await axios.post("https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/add-our-partner-data", data);
+        await axios.post("https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/add-our-partner-data", data);
         Swal.fire("Success", "Partner data added successfully", "success");
       }
       fetchPartners();
@@ -115,7 +115,7 @@ const OurPartenerTable = () => {
       if (result.isConfirmed) {
         try {
           await axios.delete(
-            `https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/delete-our-partner-data/${id}`
+            `https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/delete-our-partner-data/${id}`
           );
           Swal.fire({
             icon: "success",

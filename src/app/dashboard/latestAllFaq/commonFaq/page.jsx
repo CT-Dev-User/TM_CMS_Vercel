@@ -48,7 +48,7 @@ const FaqTable = () => {
   const fetchFaqs = async () => {
     setLoading(true); // Start loading spinner
     try {
-      const response = await axios.get("https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/get-all-faq");
+      const response = await axios.get("https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-all-faq");
       setFaqs(response.data);
       setLoading(false); // Stop loading spinner
     } catch (error) {
@@ -64,12 +64,12 @@ const FaqTable = () => {
         answer,
       };
       if (editMode) {
-        await axios.put(`https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/edit-faq/${editId}`, faqData);
+        await axios.put(`https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/edit-faq/${editId}`, faqData);
         Swal.fire("Success", "FAQ data updated successfully", "success");
         setEditMode(false);
         setEditId(null);
       } else {
-        await axios.post("https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/add-common-faq", faqData);
+        await axios.post("https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/add-common-faq", faqData);
         Swal.fire("Success", "FAQ data added successfully", "success");
       }
       fetchFaqs();
@@ -107,7 +107,7 @@ const FaqTable = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          await axios.delete(`https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/delete-faq/${id}`);
+          await axios.delete(`https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/delete-faq/${id}`);
           Swal.fire({
             icon: "success",
             title: "Deleted!",

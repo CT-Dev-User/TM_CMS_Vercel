@@ -63,7 +63,7 @@ const TestimonialsTable = () => {
     setLoading(true); // Start loading spinner
     try {
       const response = await axios.get(
-        "https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/get-all-coursecategory"
+        "https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-all-coursecategory"
       );
       setCourseCategories(response.data); // Update state with fetched data
     } catch (err) {
@@ -78,7 +78,7 @@ const TestimonialsTable = () => {
     setLoading(true); // Start loading spinner
     try {
       const response = await axios.get(
-        "https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/get-all-testimonials"
+        "https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-all-testimonials"
       );
       setTestimonials(response.data);
       setFilteredPrograms(response.data);
@@ -102,7 +102,7 @@ const TestimonialsTable = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          await axios.delete(`https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/delete-testimonials/${id}`);
+          await axios.delete(`https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/delete-testimonials/${id}`);
           Swal.fire({
             icon: "success",
             title: "Deleted!",
@@ -194,7 +194,7 @@ const TestimonialsTable = () => {
 
     try {
       const response = await axios.post(
-        "https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/add-all-testimonials",
+        "https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/add-all-testimonials",
         formDataToSend,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -230,7 +230,7 @@ const TestimonialsTable = () => {
 
     try {
       const response = await axios.put(
-        `https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/edit-testimonials/${editId}`,
+        `https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/edit-testimonials/${editId}`,
         formDataToSend,
         {
           headers: { "Content-Type": "multipart/form-data" },

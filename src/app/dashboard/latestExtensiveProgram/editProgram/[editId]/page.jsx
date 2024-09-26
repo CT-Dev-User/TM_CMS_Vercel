@@ -67,7 +67,7 @@ const EditExtensiveProgram = () => {
       const fetchCourseCategories = async () => {
         setLoading(true)
         try {
-          const response = await axios.get('https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/get-all-coursecategory');
+          const response = await axios.get('https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-all-coursecategory');
           setCourseCategories(response.data);
           setLoading(false)
         } catch (err) {
@@ -79,7 +79,7 @@ const EditExtensiveProgram = () => {
         const fetchProgramData = async (id) => {
           setLoading(true)
           try {
-            const response = await axios.get(`https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/get-all-extensive-program-by-id/${id}`);
+            const response = await axios.get(`https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-all-extensive-program-by-id/${id}`);
             const programData = response.data;
             setCourseCategory(programData.Category);
             setCardData(programData.cardData);
@@ -121,7 +121,7 @@ const EditExtensiveProgram = () => {
     }
 
     try {
-      await axios.put(`https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/update-extensive-program-by-id/${editId}`, formData);
+      await axios.put(`https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/update-extensive-program-by-id/${editId}`, formData);
       Swal.fire('Success', 'program data updated successfully', 'success');
       router.push('/dashboard/latestExtensiveProgram/programTable');
     } catch (error) {

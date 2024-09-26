@@ -499,7 +499,7 @@ const Sidebar = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         // Make a request to the backend to log out
-        axios.post("https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/logout") // Adjust the URL as per your backend route
+        axios.post("https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/logout") // Adjust the URL as per your backend route
           .then((response) => {
             // Clear user authentication state and token from local storage
             setuserauth({ user: null, token: "" });

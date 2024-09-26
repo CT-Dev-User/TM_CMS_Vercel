@@ -76,7 +76,7 @@ const SuccessStoriesTable = () => {
   const fetchCourseCategories = async () => {
     try {
       const response = await axios.get(
-        "https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/get-all-coursecategory"
+        "https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-all-coursecategory"
       );
       setCourseCategories(response.data);
       setLoading(false);
@@ -90,7 +90,7 @@ const SuccessStoriesTable = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/get-all-success-story-data"
+        "https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-all-success-story-data"
       );
       setStories(response.data);
       setFilteredPrograms(response.data);
@@ -115,7 +115,7 @@ const SuccessStoriesTable = () => {
       if (result.isConfirmed) {
         try {
           await axios.delete(
-            `https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/delete-success-story-data/${id}`
+            `https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/delete-success-story-data/${id}`
           );
           Swal.fire({
             icon: "success",
@@ -202,7 +202,7 @@ const SuccessStoriesTable = () => {
 
     try {
       await axios.post(
-        "https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/add-success-story-data",
+        "https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/add-success-story-data",
         formDataToSend,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -235,7 +235,7 @@ const SuccessStoriesTable = () => {
 
     try {
       await axios.put(
-        `https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/edit-success-story-data/${editFormData.id}`,
+        `https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/edit-success-story-data/${editFormData.id}`,
         formDataToSend,
         {
           headers: { "Content-Type": "multipart/form-data" },

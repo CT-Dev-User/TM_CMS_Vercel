@@ -69,7 +69,7 @@ const OurAlumniCMS = () => {
     setLoading(true); // Start loading spinner
     try {
       const response = await axios.get(
-        "https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/get-all-coursecategory"
+        "https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-all-coursecategory"
       );
       setCourseCategories(response.data);
       setLoading(false);
@@ -82,7 +82,7 @@ const OurAlumniCMS = () => {
     setLoading(true); // Start loading spinner
     try {
       const response = await axios.get(
-        "https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/get-all-our-alumni-data"
+        "https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-all-our-alumni-data"
       );
       setAlumniData(response.data);
       setFilteredPrograms(response.data);
@@ -146,13 +146,13 @@ const OurAlumniCMS = () => {
 
       if (isEdit) {
         await axios.put(
-          `https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/update-our-alumni-data/${editId}`,
+          `https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/update-our-alumni-data/${editId}`,
           formDataToSend
         );
         Swal.fire("Success", "Edit alumni successfully", "success");
       } else {
         await axios.post(
-          "https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/add-our-alumni-data",
+          "https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/add-our-alumni-data",
           formDataToSend
         );
         Swal.fire("Success", "Add alumni successfully", "success");
@@ -178,7 +178,7 @@ const OurAlumniCMS = () => {
 
       if (result.isConfirmed) {
         await axios.delete(
-          `https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/delete-our-alumni-data/${id}`
+          `https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/delete-our-alumni-data/${id}`
         );
         Swal.fire("Deleted!", "The alumni has been deleted.", "success");
         fetchAlumniData();

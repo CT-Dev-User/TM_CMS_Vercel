@@ -69,7 +69,7 @@ const ExtensiveProgramTable = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/get-all-coursecategory"
+        "https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-all-coursecategory"
       );
       setCourseCategories(response.data);
       setLoading(false);
@@ -84,7 +84,7 @@ const ExtensiveProgramTable = () => {
     
     try {
       const response = await axios.get(
-        "https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/get-extensive-program"
+        "https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-extensive-program"
       );
       setPrograms(response.data);
       setFilteredPrograms(response.data)
@@ -117,7 +117,7 @@ const ExtensiveProgramTable = () => {
       if (result.isConfirmed) {
         try {
           await axios.delete(
-            `https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/delete-extensive-program-by-id/${id}`
+            `https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/delete-extensive-program-by-id/${id}`
           );
           Swal.fire({
             icon: "success",

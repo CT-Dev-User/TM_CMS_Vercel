@@ -30,7 +30,7 @@ const TechnicalHighlightsTable = () => {
       const fetchTechnicalHighlights = async () => {
         try {
           const response = await axios.get(
-            `https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/get-by-category-technical-highlights/category/${category}`
+            `https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/get-by-category-technical-highlights/category/${category}`
           );
           setTechnicalHighlights(response.data);
         } catch (error) {
@@ -65,7 +65,7 @@ const TechnicalHighlightsTable = () => {
       }).then(async (result) => {
         if (result.isConfirmed) {
           await axios.delete(
-            `https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/delete-technical-highlights/${id}`
+            `https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/delete-technical-highlights/${id}`
           );
           fetchTechnicalHighlights();
           Swal.fire("Deleted!", "The highlight has been deleted.", "success");
@@ -88,12 +88,12 @@ const TechnicalHighlightsTable = () => {
 
       if (selectedHighlight) {
         await axios.put(
-          `https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/update-technical-highlight/${selectedHighlight._id}`,
+          `https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/update-technical-highlight/${selectedHighlight._id}`,
           form
         );
       } else {
         await axios.post(
-          "https://ot676akte0.execute-api.ap-south-1.amazonaws.com/dev/add-technical-highlights",
+          "https://tmbackend-bakyrwvoq-tech-momentum.vercel.app/add-technical-highlights",
           form
         );
       }
