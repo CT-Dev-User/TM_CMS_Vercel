@@ -61,7 +61,7 @@ const ContactUsCMS = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "https://backend-neon-nu.vercel.app/get-new-contact-us-page-data"
+        "https://trialtmbackend.vercel.app/get-new-contact-us-page-data"
       );
       setContactUsData(response.data);
       setLoading(false);
@@ -145,7 +145,7 @@ const ContactUsCMS = () => {
     try {
       if (isEdit) {
         await axios.put(
-          `https://backend-neon-nu.vercel.app/edit-new-contact-us-page-data/${editId}`,
+          `https://trialtmbackend.vercel.app/edit-new-contact-us-page-data/${editId}`,
           formDataToSend
         );
         Swal.fire(
@@ -155,7 +155,7 @@ const ContactUsCMS = () => {
         );
       } else {
         await axios.post(
-          "https://backend-neon-nu.vercel.app/add-new-contact-us-page-data",
+          "https://trialtmbackend.vercel.app/add-new-contact-us-page-data",
           formDataToSend
         );
         Swal.fire("Success", "Contact Us entry added successfully!", "success");
@@ -180,7 +180,7 @@ const ContactUsCMS = () => {
       if (result.isConfirmed) {
         try {
           await axios.delete(
-            `https://backend-neon-nu.vercel.app/delete-contact-us-page-data/${id}`
+            `https://trialtmbackend.vercel.app/delete-contact-us-page-data/${id}`
           );
           Swal.fire(
             "Deleted!",

@@ -48,7 +48,7 @@ const FaqTable = () => {
   const fetchFaqs = async () => {
     setLoading(true); // Start loading spinner
     try {
-      const response = await axios.get("https://backend-neon-nu.vercel.app/get-all-faq");
+      const response = await axios.get("https://trialtmbackend.vercel.app/get-all-faq");
       setFaqs(response.data);
       setLoading(false); // Stop loading spinner
     } catch (error) {
@@ -64,12 +64,12 @@ const FaqTable = () => {
         answer,
       };
       if (editMode) {
-        await axios.put(`https://backend-neon-nu.vercel.app/edit-faq/${editId}`, faqData);
+        await axios.put(`https://trialtmbackend.vercel.app/edit-faq/${editId}`, faqData);
         Swal.fire("Success", "FAQ data updated successfully", "success");
         setEditMode(false);
         setEditId(null);
       } else {
-        await axios.post("https://backend-neon-nu.vercel.app/add-common-faq", faqData);
+        await axios.post("https://trialtmbackend.vercel.app/add-common-faq", faqData);
         Swal.fire("Success", "FAQ data added successfully", "success");
       }
       fetchFaqs();
@@ -107,7 +107,7 @@ const FaqTable = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          await axios.delete(`https://backend-neon-nu.vercel.app/delete-faq/${id}`);
+          await axios.delete(`https://trialtmbackend.vercel.app/delete-faq/${id}`);
           Swal.fire({
             icon: "success",
             title: "Deleted!",

@@ -63,7 +63,7 @@ const TestimonialsTable = () => {
     setLoading(true); // Start loading spinner
     try {
       const response = await axios.get(
-        "https://backend-neon-nu.vercel.app/get-all-coursecategory"
+        "https://trialtmbackend.vercel.app/get-all-coursecategory"
       );
       setCourseCategories(response.data); // Update state with fetched data
     } catch (err) {
@@ -78,7 +78,7 @@ const TestimonialsTable = () => {
     setLoading(true); // Start loading spinner
     try {
       const response = await axios.get(
-        "https://backend-neon-nu.vercel.app/get-all-testimonials"
+        "https://trialtmbackend.vercel.app/get-all-testimonials"
       );
       setTestimonials(response.data);
       setFilteredPrograms(response.data);
@@ -102,7 +102,7 @@ const TestimonialsTable = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          await axios.delete(`https://backend-neon-nu.vercel.app/delete-testimonials/${id}`);
+          await axios.delete(`https://trialtmbackend.vercel.app/delete-testimonials/${id}`);
           Swal.fire({
             icon: "success",
             title: "Deleted!",
@@ -194,7 +194,7 @@ const TestimonialsTable = () => {
 
     try {
       const response = await axios.post(
-        "https://backend-neon-nu.vercel.app/add-all-testimonials",
+        "https://trialtmbackend.vercel.app/add-all-testimonials",
         formDataToSend,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -230,7 +230,7 @@ const TestimonialsTable = () => {
 
     try {
       const response = await axios.put(
-        `https://backend-neon-nu.vercel.app/edit-testimonials/${editId}`,
+        `https://trialtmbackend.vercel.app/edit-testimonials/${editId}`,
         formDataToSend,
         {
           headers: { "Content-Type": "multipart/form-data" },

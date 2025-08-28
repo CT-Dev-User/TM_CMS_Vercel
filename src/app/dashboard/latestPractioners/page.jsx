@@ -64,7 +64,7 @@ const PractitionersCMS = () => {
   const fetchCourseCategories = async () => {
     try {
       const response = await axios.get(
-        "https://backend-neon-nu.vercel.app/get-all-coursecategory"
+        "https://trialtmbackend.vercel.app/get-all-coursecategory"
       );
       setCourseCategories(response.data);
     } catch (err) {
@@ -76,7 +76,7 @@ const PractitionersCMS = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "https://backend-neon-nu.vercel.app/get-all-new-practioners-data"
+        "https://trialtmbackend.vercel.app/get-all-new-practioners-data"
       );
       setPractitioners(response.data);
       setfilteredpractitioners(response.data);
@@ -168,7 +168,7 @@ const PractitionersCMS = () => {
     try {
       if (isEdit) {
         await axios.put(
-          `https://backend-neon-nu.vercel.app/edit-new-practioners-data/${editId}`,
+          `https://trialtmbackend.vercel.app/edit-new-practioners-data/${editId}`,
           data,
           {
             headers: { "Content-Type": "multipart/form-data" },
@@ -176,7 +176,7 @@ const PractitionersCMS = () => {
         );
       } else {
         await axios.post(
-          "https://backend-neon-nu.vercel.app/add-new-practioners-data",
+          "https://trialtmbackend.vercel.app/add-new-practioners-data",
           data,
           {
             headers: { "Content-Type": "multipart/form-data" },
@@ -193,7 +193,7 @@ const PractitionersCMS = () => {
   const handleDelete = async (id) => {
     try {
       await axios.delete(
-        `https://backend-neon-nu.vercel.app/delete-new-practioners-data/${id}`
+        `https://trialtmbackend.vercel.app/delete-new-practioners-data/${id}`
       );
       fetchPractitioners();
     } catch (error) {

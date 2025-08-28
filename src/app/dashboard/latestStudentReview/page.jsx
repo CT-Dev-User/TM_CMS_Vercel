@@ -63,7 +63,7 @@ const StudentReviewCMS = () => {
   const fetchCourseCategories = async () => {
     try {
       const response = await axios.get(
-        "https://backend-neon-nu.vercel.app/get-all-coursecategory"
+        "https://trialtmbackend.vercel.app/get-all-coursecategory"
       );
       setCourseCategories(response.data);
     } catch (err) {
@@ -74,7 +74,7 @@ const StudentReviewCMS = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "https://backend-neon-nu.vercel.app/get-all-student-review-data"
+        "https://trialtmbackend.vercel.app/get-all-student-review-data"
       );
       setReviews(response.data);
       setFilteredReviews(response.data)
@@ -157,13 +157,13 @@ const StudentReviewCMS = () => {
       });
       if (isEdit) {
         await axios.put(
-          `https://backend-neon-nu.vercel.app/edit-student-review-data/${editId}`,
+          `https://trialtmbackend.vercel.app/edit-student-review-data/${editId}`,
           formDataToSend
         );
         Swal.fire("Success", "Add St Review successfully", "success");
       } else {
         await axios.post(
-          "https://backend-neon-nu.vercel.app/add-student-review-data",
+          "https://trialtmbackend.vercel.app/add-student-review-data",
           formDataToSend
         );
         Swal.fire("Success", "Edit St Review successfully", "success");
@@ -188,7 +188,7 @@ const StudentReviewCMS = () => {
 
       if (result.isConfirmed) {
         await axios.delete(
-          `https://backend-neon-nu.vercel.app/delete-student-review-data/${id}`
+          `https://trialtmbackend.vercel.app/delete-student-review-data/${id}`
         );
         Swal.fire(
           "Deleted!",

@@ -71,7 +71,7 @@ const AddExtensiveProgram = () => {
     const fetchCourseCategories = async () => {
         setLoading(true)
         try {
-            const response = await axios.get('https://backend-neon-nu.vercel.app/get-all-coursecategory');
+            const response = await axios.get('https://trialtmbackend.vercel.app/get-all-coursecategory');
             setCourseCategories(response.data);
             setLoading(false)
         } catch (err) {
@@ -101,7 +101,7 @@ const AddExtensiveProgram = () => {
         }
 
         try {
-            await axios.post('https://backend-neon-nu.vercel.app/add-extensive-program', formData);
+            await axios.post('https://trialtmbackend.vercel.app/add-extensive-program', formData);
             Swal.fire('Success', 'Program data added successfully', 'success');
             router.push('/dashboard/latestExtensiveProgram/programTable'); // Redirect after successful submission
         } catch (error) {

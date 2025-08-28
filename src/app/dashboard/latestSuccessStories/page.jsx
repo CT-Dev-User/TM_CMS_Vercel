@@ -76,7 +76,7 @@ const SuccessStoriesTable = () => {
   const fetchCourseCategories = async () => {
     try {
       const response = await axios.get(
-        "https://backend-neon-nu.vercel.app/get-all-coursecategory"
+        "https://trialtmbackend.vercel.app/get-all-coursecategory"
       );
       setCourseCategories(response.data);
       setLoading(false);
@@ -90,7 +90,7 @@ const SuccessStoriesTable = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "https://backend-neon-nu.vercel.app/get-all-success-story-data"
+        "https://trialtmbackend.vercel.app/get-all-success-story-data"
       );
       setStories(response.data);
       setFilteredPrograms(response.data);
@@ -115,7 +115,7 @@ const SuccessStoriesTable = () => {
       if (result.isConfirmed) {
         try {
           await axios.delete(
-            `https://backend-neon-nu.vercel.app/delete-success-story-data/${id}`
+            `https://trialtmbackend.vercel.app/delete-success-story-data/${id}`
           );
           Swal.fire({
             icon: "success",
@@ -202,7 +202,7 @@ const SuccessStoriesTable = () => {
 
     try {
       await axios.post(
-        "https://backend-neon-nu.vercel.app/add-success-story-data",
+        "https://trialtmbackend.vercel.app/add-success-story-data",
         formDataToSend,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -235,7 +235,7 @@ const SuccessStoriesTable = () => {
 
     try {
       await axios.put(
-        `https://backend-neon-nu.vercel.app/edit-success-story-data/${editFormData.id}`,
+        `https://trialtmbackend.vercel.app/edit-success-story-data/${editFormData.id}`,
         formDataToSend,
         {
           headers: { "Content-Type": "multipart/form-data" },

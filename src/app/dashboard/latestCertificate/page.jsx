@@ -57,7 +57,7 @@ const CertificateCMS = () => {
     setLoading(true); // Start loading spinner
     try {
       const response = await axios.get(
-        "https://backend-neon-nu.vercel.app/get-all-coursecategory"
+        "https://trialtmbackend.vercel.app/get-all-coursecategory"
       );
       setCourseCategories(response.data);
       setLoading(false); // Start loading spinner
@@ -69,7 +69,7 @@ const CertificateCMS = () => {
   const fetchCertificates = async () => {
     setLoading(true); // Start loading spinner
     try {
-      const response = await axios.get("https://backend-neon-nu.vercel.app/get-certificate");
+      const response = await axios.get("https://trialtmbackend.vercel.app/get-certificate");
       setCertificates(response.data);
       setfiltrCertificates(response.data);
       setLoading(false); // Start loading spinner
@@ -148,13 +148,13 @@ const CertificateCMS = () => {
     try {
       if (isEdit) {
         await axios.put(
-          `https://backend-neon-nu.vercel.app/edit-CertificateData-by-id/${editId}`,
+          `https://trialtmbackend.vercel.app/edit-CertificateData-by-id/${editId}`,
           formDataToSend
         );
         Swal.fire("Success", "Edit Data Successfully", "success");
       } else {
         await axios.post(
-          "https://backend-neon-nu.vercel.app/add-certificate",
+          "https://trialtmbackend.vercel.app/add-certificate",
           formDataToSend
         );
         Swal.fire("Success", "Add Data successfully", "success");
@@ -181,7 +181,7 @@ const CertificateCMS = () => {
       if (result.isConfirmed) {
         try {
           await axios.delete(
-            `https://backend-neon-nu.vercel.app/delete-CertificateData-by-id/${id}`
+            `https://trialtmbackend.vercel.app/delete-CertificateData-by-id/${id}`
           );
           Swal.fire("Success", "Certificate deleted successfully.", "success");
           fetchCertificates();

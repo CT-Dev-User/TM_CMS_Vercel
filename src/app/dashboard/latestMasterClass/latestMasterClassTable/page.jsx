@@ -174,8 +174,8 @@ const MasterClassCMS = () => {
 
     try {
       const url = masterClassId
-        ? `https://backend-neon-nu.vercel.app/edit-master-class/${masterClassId}`
-        : "https://backend-neon-nu.vercel.app/add-master-class-page";
+        ? `https://trialtmbackend.vercel.app/edit-master-class/${masterClassId}`
+        : "https://trialtmbackend.vercel.app/add-master-class-page";
 
       const method = masterClassId ? "PUT" : "POST";
 
@@ -209,7 +209,7 @@ const MasterClassCMS = () => {
     setLoading(true); // Start loading spinner
     try {
       const response = await axios.get(
-        "https://backend-neon-nu.vercel.app/get-all-coursecategory"
+        "https://trialtmbackend.vercel.app/get-all-coursecategory"
       );
       setCourseCategories(response.data);
       setLoading(false);
@@ -223,7 +223,7 @@ const MasterClassCMS = () => {
     setLoading(true); // Start loading spinner
     try {
       const response = await axios.get(
-        "https://backend-neon-nu.vercel.app/get-master-classes"
+        "https://trialtmbackend.vercel.app/get-master-classes"
       );
       setMasterClasses(response.data);
       setfilteredmasterClasses(response.data);
@@ -247,7 +247,7 @@ const MasterClassCMS = () => {
       if (result.isConfirmed) {
         try {
           await axios.delete(
-            `https://backend-neon-nu.vercel.app/delete-master-class-by-id/${id}`
+            `https://trialtmbackend.vercel.app/delete-master-class-by-id/${id}`
           );
           Swal.fire("Deleted!", "Master class has been deleted.", "success");
           fetchMasterClasses();
