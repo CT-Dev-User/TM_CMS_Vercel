@@ -69,7 +69,7 @@ const ExtensiveProgramTable = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "https://trialtmbackend.vercel.app/get-all-coursecategory"
+        "https://trialtmbackend.vercel.app/api/get-all-coursecategory"
       );
       setCourseCategories(response.data);
       setLoading(false);
@@ -84,7 +84,7 @@ const ExtensiveProgramTable = () => {
     
     try {
       const response = await axios.get(
-        "https://trialtmbackend.vercel.app/get-extensive-program"
+        "https://trialtmbackend.vercel.app/api/get-extensive-program"
       );
       setPrograms(response.data);
       setFilteredPrograms(response.data)
@@ -117,7 +117,7 @@ const ExtensiveProgramTable = () => {
       if (result.isConfirmed) {
         try {
           await axios.delete(
-            `https://trialtmbackend.vercel.app/delete-extensive-program-by-id/${id}`
+            `https://trialtmbackend.vercel.app/api/delete-extensive-program-by-id/${id}`
           );
           Swal.fire({
             icon: "success",

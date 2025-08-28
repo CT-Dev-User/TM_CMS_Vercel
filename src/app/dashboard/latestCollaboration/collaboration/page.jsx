@@ -47,7 +47,7 @@ const CollaborationTable = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "https://trialtmbackend.vercel.app/get-collaborations"
+        "https://trialtmbackend.vercel.app/api/get-collaborations"
       );
       setCollaborations(response.data);
       setFilteredPrograms(response.data);
@@ -70,7 +70,7 @@ const CollaborationTable = () => {
     try {
       if (editMode) {
         await axios.put(
-          `https://trialtmbackend.vercel.app/edit-collaboration-by-id/${editId}`,
+          `https://trialtmbackend.vercel.app/api/edit-collaboration-by-id/${editId}`,
           formData
         );
         Swal.fire(
@@ -81,7 +81,7 @@ const CollaborationTable = () => {
         setEditMode(false);
         setEditId(null);
       } else {
-        await axios.post("https://trialtmbackend.vercel.app/add-collaboration", formData);
+        await axios.post("https://trialtmbackend.vercel.app/api/add-collaboration", formData);
         Swal.fire(
           "Success",
           "Collaboration data added successfully",
@@ -130,7 +130,7 @@ const CollaborationTable = () => {
       if (result.isConfirmed) {
         try {
           await axios.delete(
-            `https://trialtmbackend.vercel.app/delete-collaboration-by-id/${id}`
+            `https://trialtmbackend.vercel.app/api/delete-collaboration-by-id/${id}`
           );
           Swal.fire({
             icon: "success",

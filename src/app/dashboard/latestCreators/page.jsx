@@ -59,7 +59,7 @@ const CreatorManagementTable = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "https://trialtmbackend.vercel.app/get-all-creators"
+        "https://trialtmbackend.vercel.app/api/get-all-creators"
       );
       setCreators(response.data);
       setfilteredcreators(response.data);
@@ -81,7 +81,7 @@ const CreatorManagementTable = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "https://trialtmbackend.vercel.app/get-all-coursecategory"
+        "https://trialtmbackend.vercel.app/api/get-all-coursecategory"
       );
       setCourseCategories(response.data);
       setLoading(false);
@@ -105,7 +105,7 @@ const CreatorManagementTable = () => {
       if (result.isConfirmed) {
         try {
           await axios.delete(
-            `https://trialtmbackend.vercel.app/delete-creator-by-id/${id}`
+            `https://trialtmbackend.vercel.app/api/delete-creator-by-id/${id}`
           );
           fetchCreators();
           Swal.fire("Success", "Creator data deleted successfully", "success");
@@ -189,7 +189,7 @@ const CreatorManagementTable = () => {
     try {
       if (editMode) {
         await axios.put(
-          `https://trialtmbackend.vercel.app/edit-creator/${editFormData.id}`,
+          `https://trialtmbackend.vercel.app/api/edit-creator/${editFormData.id}`,
           formDataToSend,
           {
             headers: { "Content-Type": "multipart/form-data" },
@@ -197,7 +197,7 @@ const CreatorManagementTable = () => {
         );
         Swal.fire("Success", "Creator data updated successfully", "success");
       } else {
-        await axios.post("https://trialtmbackend.vercel.app/add-creator", formDataToSend, {
+        await axios.post("https://trialtmbackend.vercel.app/api/add-creator", formDataToSend, {
           headers: { "Content-Type": "multipart/form-data" },
         });
         Swal.fire("Success", "Creator data added successfully", "success");

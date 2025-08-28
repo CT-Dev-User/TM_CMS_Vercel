@@ -30,7 +30,7 @@ const TechnicalHighlightsTable = () => {
       const fetchTechnicalHighlights = async () => {
         try {
           const response = await axios.get(
-            `https://trialtmbackend.vercel.app/get-by-category-technical-highlights/category/${category}`
+            `https://trialtmbackend.vercel.app/api/get-by-category-technical-highlights/category/${category}`
           );
           setTechnicalHighlights(response.data);
         } catch (error) {
@@ -65,7 +65,7 @@ const TechnicalHighlightsTable = () => {
       }).then(async (result) => {
         if (result.isConfirmed) {
           await axios.delete(
-            `https://trialtmbackend.vercel.app/delete-technical-highlights/${id}`
+            `https://trialtmbackend.vercel.app/api/delete-technical-highlights/${id}`
           );
           fetchTechnicalHighlights();
           Swal.fire("Deleted!", "The highlight has been deleted.", "success");
@@ -88,12 +88,12 @@ const TechnicalHighlightsTable = () => {
 
       if (selectedHighlight) {
         await axios.put(
-          `https://trialtmbackend.vercel.app/update-technical-highlight/${selectedHighlight._id}`,
+          `https://trialtmbackend.vercel.app/api/update-technical-highlight/${selectedHighlight._id}`,
           form
         );
       } else {
         await axios.post(
-          "https://trialtmbackend.vercel.app/add-technical-highlights",
+          "https://trialtmbackend.vercel.app/api/add-technical-highlights",
           form
         );
       }

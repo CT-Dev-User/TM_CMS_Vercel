@@ -60,7 +60,7 @@ const TeamMemberCMS = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "https://trialtmbackend.vercel.app/get-all-our-team-data"
+        "https://trialtmbackend.vercel.app/api/get-all-our-team-data"
       );
       setTeamMembers(response.data);
       setLoading(false);
@@ -119,7 +119,7 @@ const TeamMemberCMS = () => {
     try {
       if (isEdit) {
         await axios.put(
-          `https://trialtmbackend.vercel.app/edit-our-team-data/${editId}`,
+          `https://trialtmbackend.vercel.app/api/edit-our-team-data/${editId}`,
           formDataToSend,
           {
             headers: { "Content-Type": "multipart/form-data" },
@@ -128,7 +128,7 @@ const TeamMemberCMS = () => {
         Swal.fire("Success", "Team member updated successfully.", "success");
       } else {
         await axios.post(
-          "https://trialtmbackend.vercel.app/add-our-team-data",
+          "https://trialtmbackend.vercel.app/api/add-our-team-data",
           formDataToSend,
           {
             headers: { "Content-Type": "multipart/form-data" },
@@ -158,7 +158,7 @@ const TeamMemberCMS = () => {
       if (result.isConfirmed) {
         try {
           await axios.delete(
-            `https://trialtmbackend.vercel.app/delete-our-team-data/${id}`
+            `https://trialtmbackend.vercel.app/api/delete-our-team-data/${id}`
           );
           Swal.fire("Success", "Team member deleted successfully.", "success");
           fetchTeamMembers();

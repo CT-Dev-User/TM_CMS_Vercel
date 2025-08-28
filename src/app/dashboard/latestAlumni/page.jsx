@@ -69,7 +69,7 @@ const OurAlumniCMS = () => {
     setLoading(true); // Start loading spinner
     try {
       const response = await axios.get(
-        "https://trialtmbackend.vercel.app/get-all-coursecategory"
+        "https://trialtmbackend.vercel.app/api/get-all-coursecategory"
       );
       setCourseCategories(response.data);
       setLoading(false);
@@ -82,7 +82,7 @@ const OurAlumniCMS = () => {
     setLoading(true); // Start loading spinner
     try {
       const response = await axios.get(
-        "https://trialtmbackend.vercel.app/get-all-our-alumni-data"
+        "https://trialtmbackend.vercel.app/api/get-all-our-alumni-data"
       );
       setAlumniData(response.data);
       setFilteredPrograms(response.data);
@@ -146,13 +146,13 @@ const OurAlumniCMS = () => {
 
       if (isEdit) {
         await axios.put(
-          `https://trialtmbackend.vercel.app/update-our-alumni-data/${editId}`,
+          `https://trialtmbackend.vercel.app/api/update-our-alumni-data/${editId}`,
           formDataToSend
         );
         Swal.fire("Success", "Edit alumni successfully", "success");
       } else {
         await axios.post(
-          "https://trialtmbackend.vercel.app/add-our-alumni-data",
+          "https://trialtmbackend.vercel.app/api/add-our-alumni-data",
           formDataToSend
         );
         Swal.fire("Success", "Add alumni successfully", "success");
@@ -178,7 +178,7 @@ const OurAlumniCMS = () => {
 
       if (result.isConfirmed) {
         await axios.delete(
-          `https://trialtmbackend.vercel.app/delete-our-alumni-data/${id}`
+          `https://trialtmbackend.vercel.app/api/delete-our-alumni-data/${id}`
         );
         Swal.fire("Deleted!", "The alumni has been deleted.", "success");
         fetchAlumniData();

@@ -50,7 +50,7 @@ const ContactUsCMS = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "https://trialtmbackend.vercel.app/get-new-contact-us-forms-data"
+        "https://trialtmbackend.vercel.app/api/get-new-contact-us-forms-data"
       );
       setContactUsForms(response.data);
       setLoading(false);
@@ -72,7 +72,7 @@ const ContactUsCMS = () => {
       if (result.isConfirmed) {
         try {
           await axios.delete(
-            `https://trialtmbackend.vercel.app/delete-new-contact-us-form/${id}`
+            `https://trialtmbackend.vercel.app/api/delete-new-contact-us-form/${id}`
           );
           Swal.fire("Deleted!", "Client entry has been deleted.", "success");
           fetchContactUsForms();

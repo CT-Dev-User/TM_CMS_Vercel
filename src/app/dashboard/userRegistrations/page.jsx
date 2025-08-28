@@ -47,7 +47,7 @@ const UserRegistration = () => {
   const getAllUsersData = async () => {
     setLoading(true); // Start loading spinner
     try {
-      const response = await axios.get("https://trialtmbackend.vercel.app/all-users");
+      const response = await axios.get("https://trialtmbackend.vercel.app/api/all-users");
       setUsers(response.data);
       setLoading(false); // Stop loading spinner
     } catch (error) {
@@ -105,7 +105,7 @@ const UserRegistration = () => {
     e.preventDefault();
     try {
       const response = await axios.put(
-        `https://trialtmbackend.vercel.app/update-user/${editId}`,
+        `https://trialtmbackend.vercel.app/api/update-user/${editId}`,
         user
       );
       setEditUserModal(false);
@@ -122,7 +122,7 @@ const UserRegistration = () => {
   const registerUser = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("https://trialtmbackend.vercel.app/register", user);
+      const response = await axios.post("https://trialtmbackend.vercel.app/api/register", user);
       if (response.status === 200) {
         Swal.fire({
           icon: "success",
@@ -149,7 +149,7 @@ const UserRegistration = () => {
       if (result.isConfirmed) {
         try {
           const response = await axios.delete(
-            `https://trialtmbackend.vercel.app/delete-user/${delete_id}`
+            `https://trialtmbackend.vercel.app/api/delete-user/${delete_id}`
           );
           if (response.status === 200) {
             Swal.fire({

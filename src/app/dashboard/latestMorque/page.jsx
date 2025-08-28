@@ -59,7 +59,7 @@ const MorqueCMS = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "https://trialtmbackend.vercel.app/get-all-coursecategory"
+        "https://trialtmbackend.vercel.app/api/get-all-coursecategory"
       );
       setCourseCategories(response.data);
       setLoading(false);
@@ -71,7 +71,7 @@ const MorqueCMS = () => {
   const fetchMorqueData = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("https://trialtmbackend.vercel.app/get-morqueData");
+      const response = await axios.get("https://trialtmbackend.vercel.app/api/get-morqueData");
       setMorqueData(response.data);
       setFilteredPrograms(response.data);
       setLoading(false);
@@ -108,12 +108,12 @@ const MorqueCMS = () => {
     try {
       if (isEdit) {
         await axios.put(
-          `https://trialtmbackend.vercel.app/update-morqueData/${editId}`,
+          `https://trialtmbackend.vercel.app/api/update-morqueData/${editId}`,
           formData
         );
         Swal.fire("Success", "Add batch ad successfully", "success");
       } else {
-        await axios.post("https://trialtmbackend.vercel.app/add-morqueData", formData);
+        await axios.post("https://trialtmbackend.vercel.app/api/add-morqueData", formData);
         Swal.fire("Success", "Edit batch ad successfully", "success");
       }
       fetchMorqueData();
@@ -137,7 +137,7 @@ const MorqueCMS = () => {
       });
 
       if (result.isConfirmed) {
-        await axios.delete(`https://trialtmbackend.vercel.app/delete-morqueData/${id}`);
+        await axios.delete(`https://trialtmbackend.vercel.app/api/delete-morqueData/${id}`);
         Swal.fire("Deleted!", "The ad. has been deleted.", "success");
         fetchMorqueData();
       }

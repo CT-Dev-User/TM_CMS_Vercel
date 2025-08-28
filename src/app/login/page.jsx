@@ -19,7 +19,7 @@ const SignIn = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post("https://trialtmbackend.vercel.app/login", {
+      const response = await axios.post("https://trialtmbackend.vercel.app/api/login", {
         email,
         password,
       });

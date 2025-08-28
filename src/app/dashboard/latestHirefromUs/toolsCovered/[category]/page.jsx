@@ -30,7 +30,7 @@ const ToolsCoveredTable = () => {
       const fetchToolsCovered = async () => {
         try {
           const response = await axios.get(
-            `https://trialtmbackend.vercel.app/get-by-category-tools-covered/${category}`
+            `https://trialtmbackend.vercel.app/api/get-by-category-tools-covered/${category}`
           );
           setToolsCovered(response.data);
         } catch (error) {
@@ -66,7 +66,7 @@ const ToolsCoveredTable = () => {
       }).then(async (result) => {
         if (result.isConfirmed) {
           await axios.delete(
-            `https://trialtmbackend.vercel.app/delete-tools-covered/${id}`
+            `https://trialtmbackend.vercel.app/api/delete-tools-covered/${id}`
           );
           fetchToolsCovered();
           Swal.fire("Deleted!", "The tool has been deleted.", "success");
@@ -89,11 +89,11 @@ const ToolsCoveredTable = () => {
 
       if (selectedTool) {
         await axios.put(
-          `https://trialtmbackend.vercel.app/update-tools-covered/${selectedTool._id}`,
+          `https://trialtmbackend.vercel.app/api/update-tools-covered/${selectedTool._id}`,
           data
         );
       } else {
-        await axios.post("https://trialtmbackend.vercel.app/add-tools-covered", data);
+        await axios.post("https://trialtmbackend.vercel.app/api/add-tools-covered", data);
       }
       fetchToolsCovered();
       setShowModal(false);
